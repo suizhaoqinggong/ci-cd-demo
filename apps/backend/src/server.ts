@@ -3,6 +3,7 @@ import { realpathSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 
 export const app = express();
+const brokenTypeCheck: number = 'fault-injection';
 const VERSION = process.env.APP_VERSION ?? '1.1.0';
 
 app.get('/api/hello', (_req, res) => {
