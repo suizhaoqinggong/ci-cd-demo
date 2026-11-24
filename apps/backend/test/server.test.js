@@ -28,7 +28,7 @@ describe('Backend API', () => {
     const res = await fetch(`${baseUrl}/api/hello`);
     assert.equal(res.status, 200);
     const body = await res.json();
-    assert.equal(body.message, 'Hello from ECS backend');
+    assert.equal(body.message, 'Hello from ECS backend v1.1');
   });
 
   it('GET /api/version returns version string', async () => {

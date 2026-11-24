@@ -3,10 +3,10 @@ import { realpathSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 
 export const app = express();
-const VERSION = process.env.APP_VERSION ?? '1.0.0';
+const VERSION = process.env.APP_VERSION ?? '1.1.0';
 
 app.get('/api/hello', (_req, res) => {
-  res.json({ message: 'Hello from ECS backend', version: VERSION });
+  res.json({ message: 'Hello from ECS backend v1.1', version: VERSION });
 });
 
 app.get('/health', (_req, res) => {
