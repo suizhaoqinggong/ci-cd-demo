@@ -71,7 +71,7 @@ jobs:
           ssh -p "$SSH_PORT" -o BatchMode=yes "$ECS_USER@$ECS_HOST" "DEPLOY_SHA=$GITHUB_SHA bash -se" <<'REMOTE'
           set -euo pipefail
           release="/srv/cicd-demo/releases/${DEPLOY_SHA}"
-          previous="$(readlink -f /srv/cicd-demo/current || true)"
+          previous="$(readlink -e /srv/cicd-demo/current || true)"
 
           cd "$release/backend"
           npm ci --omit=dev
